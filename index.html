@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="/js/knockout-latest.js"></script>
+        <script type="text/javascript" src="/js/HDHomerunViewModel.js"></script>
+    </head>
+    <body>
+        <ul data-bind="foreach: lineup">
+            <li>
+                <a href="#" data-bind="click: $parent.getChannel.bind($data, GuideNumber), text: GuideNumber + ' ' + GuideName"></a>
+            </li>
+        </ul>
+    </body>
+</html>
