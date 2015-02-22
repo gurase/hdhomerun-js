@@ -21,7 +21,13 @@ app.get('/channels/:channel', function(req, res) {
         qs: { transcode: req.query.transcode }
     };
     
-    request.get(options).pipe(res);
+    console.log("stream started: " + req.params.channel);
+    
+    var clientrequest = request.get(options);
+    clientrequest.pipe(res).on("close", function() {
+        console.log("stream ended: " + req.params.channel);
+        clientrequest.abort();
+    });
 });
 
 http.listen(3001, function() {

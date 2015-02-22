@@ -1,13 +1,13 @@
 <html>
     <head>
-        <script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
-        <script type="text/javascript" src="/js/knockout-latest.js"></script>
-        <script type="text/javascript" src="/js/HDHomerunViewModel.js"></script>
+        <script type="text/javascript" src="/js/libraries/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="/js/librariesknockout-latest.js"></script>
+        <script type="text/javascript" src="/js/models/HDHomerunViewModel.js"></script>
     </head>
     <body>
         <ul data-bind="foreach: lineup">
             <li>
-                <a href="#" data-bind="click: $parent.getChannel.bind($data, GuideNumber), text: GuideNumber + ' ' + GuideName"></a>
+                <a data-bind="attr: { href: $parent.getChannel(GuideNumber) }, text: GuideNumber + ' ' + GuideName"></a>
             </li>
         </ul>
     </body>

@@ -7,7 +7,7 @@ var HDHomerunViewModel = function() {
     
     this.getChannel = function(channel)
     {
-        window.location.href = '/channels/' + channel;
+        return '/channels/' + channel;
     }
 }
 
