@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/gurase/hdhomerun-js/issues"
   },
-  "homepage": "https://github.com/gurase/hdhomerun-js"
+  "homepage": "https://github.com/gurase/hdhomerun-js",
+  "dependencies": {
+    "express": "^4.12.0",
+    "jade": "^1.11.0",
+    "request": "^2.53.0"
+  }
 }
