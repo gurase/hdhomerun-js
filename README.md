@@ -7,5 +7,4 @@ Tested with HDHomerun Plus (HDTC-2US).
 
 TODO:
   - Auth
-  - Select transcode profile
   - Styling
