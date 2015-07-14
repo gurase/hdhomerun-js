@@ -1,7 +1,6 @@
-function Channel(number, name, url) {
+function Channel(number, name) {
     this.number = number;
     this.name = name;
-    this.url = url;
 }
 
 module.exports = Channel;

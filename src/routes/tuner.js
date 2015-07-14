@@ -7,19 +7,20 @@ function setupTunerRoutes(app) {
         // TODO: error check
         tuner.getLineup(function(error, response, channels) {
             res.render('tuner/channels', {
-                channels: channels
+                channels: channels,
+                profiles: tuner.getProfiles()
             });
         });
     });
 
-    app.get('/channels/:channel', function(req, res) {
+    app.get('/stream', function(req, res) {
         var tuner = new TunerService();
-        var channel = req.params.channel;
-        var quality = req.query.transcode;
-
+        var channel = req.query.channel;
+        var transcode = req.query.transcode || undefined;
+        
         console.log("stream started: " + channel);
 
-        var stream = tuner.getStream(channel, quality);
+        var stream = tuner.getStream(channel, transcode);
         stream.pipe(res).on("close", function() {
             console.log("stream ended: " + channel);
             stream.abort();

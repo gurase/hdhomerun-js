@@ -1,4 +1,12 @@
-ul
-    each channel in channels
-        li
-            a(href="#{channel.url}") #{channel.number} #{channel.name}
+include ../base
+
+form(action="/stream", method="get")
+    select(name="channel", id="channel")
+            each channel in channels
+                option(value=channel.number)= channel.number + ' ' + channel.name
+                
+    select(name="transcode", id="transcode")
+        each profile in profiles
+            option(value= profile.value)= profile.display
+            
+    input(type="submit" value="Stream")
