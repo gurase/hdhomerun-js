@@ -1,4 +1,5 @@
 var TunerService = require('../services/TunerService');
+var url = require('url');
 
 function setupTunerRoutes(app) {
     app.get('/channels', function(req, res) {
@@ -13,6 +14,15 @@ function setupTunerRoutes(app) {
         });
     });
 
+    app.get('/selectchannel', function(req, res) {
+        url.format({
+            protocol: req.protocol,
+            host: req.headers.host,
+            pathname: "/stream",
+            query: req.query
+        })
+    });
+    
     app.get('/stream', function(req, res) {
         var tuner = new TunerService();
         var channel = req.query.channel;
@@ -26,6 +36,6 @@ function setupTunerRoutes(app) {
             stream.abort();
         });
     });
-};
+}
 
 module.exports = setupTunerRoutes;

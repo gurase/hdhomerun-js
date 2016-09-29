@@ -1,0 +1,24 @@
+{
+  "name": "hdhomerun-js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/gurase/hdhomerun-js",
+  "authors": [
+    "Grace Mann"
+  ],
+  "description": "HDHomerun streaming client that can be used remotely.",
+  "main": "start.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~3.1.1"
+  }
+}
